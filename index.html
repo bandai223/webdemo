@@ -7,10 +7,6 @@
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
-        button {
-            background-color: aqua;
-            font-family: 'Noto Sans Thai', sans-serif;
-        }
         h1 {
             font-family: 'Noto Sans Thai', sans-serif;
         }
@@ -20,21 +16,32 @@
         .thai {
             font-family: 'Charm', cursive;
         }
-        img {
-            margin-top: 1em;
-            margin-bottom: 1em;
-            width: 500px; height: 500px; object-fit: cover; object-position: 35% 0;
-        }
         .center {
             text-align: center;
+        }
+        .right {
+            text-align: right;
+        }
+        button {
+            width: 150px; height: 30px;
+            font-family: 'Noto Sans Thai', sans-serif;
         }
     </style>
   </head>
   <body>
-    <h1 class="center">Yo, Wassup</h1>
-    <p class="thai center">ทดสอบพาสาทัยเต็มระบบ</p>
-    <p><a href="https://www.youtube.com/shorts/xyWKuFa-28A" target="_blank"><button>Nothing</button></a></p>
-    <img src="olafrizz.jpg" width="50%" height="50%">
+    <h1 class="center" id="header" style="font-size: 4vw; margin-bottom: 0em;">Yo, Wassup</h1>
+    <div class="center"><button style="border: none; background: none;" type="button" onclick="document.getElementById('header').style.color='red'">เปลี่ยนสี</button></div>
+    <p class="thai center" style="font-size: 2vw;">ทดสอบพาสาทัยเต็มระบบ</p>
+    <p class="center"><img src="assets/images/olafrizz.jpg" width="50%" height="50%" style="width: 700px; height: 500px; object-fit: cover; object-position: 20% 0;"></p>
+    <p><button>NOTHING</button></p>
+    <p><a href="https://www.youtube.com/shorts/xyWKuFa-28A" target="_blank"><button>CLICK ME PLEASE</button></a></p>
+        
+    <div class="center">
+        <button onclick="document.getElementById('myImage').src='assets/cat/Idle.png'">แงวยืน</button>
+        <img id="myImage" src="assets/cat/Idle.png" width="200px" height="200px">
+        <button onclick="document.getElementById('myImage').src='assets/cat/Slide.png'">แงวสไลด์</button>
+    </div>
+
     <p></p>
     <table border="1">
         <tr>
