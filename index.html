@@ -97,6 +97,41 @@
             table.style.display = "none";
         }
     </script>
+
+    <p>คำนวณเลข</p>
+    <label for="input1">Number #1</label>
+    <input id="input1"><br><br>
+
+    <label for="input2">Number #1</label>
+    <input id="input2"><br><br>
+
+    <label for="input3">Number #1</label>
+    <input id="input3"><br><br>
+
+    <button onclick="calculate()">Submit</button><br><br>
+
+    <div id="average"></div><br>
+    <div id="maxValue"></div><br>
+    <div id="minvalue"></div><br>
+
+    <script>
+        function calculate() {
+            var input1 = parseFloat(document.getElementById("input1").value);
+            var input2 = parseFloat(document.getElementById("input2").value);
+            var input3 = parseFloat(document.getElementById("input3").value);
+
+            var average = (input1 + input2 + input3) / 3;
+
+            var maxValue = Math.max(input1, input2, input3);
+
+            var minvalue = Math.min(input1, input2, input3);
+
+            document.getElementById("average").innerHTML = "ค่าเฉลี่ยคือ " + average.toFixed(2);
+            document.getElementById("maxValue").innerHTML = "ค่าสูงสุดคือ " + maxValue;
+            document.getElementById("minValue").innerHTML = "ค่าต่ำสุดคือ " + minValue;
+        }
+    <script>
+    
     
     <div class="center" style="margin-top: 3em;"><button onclick="displayText()">NOTHING</button></div>
     <div class="center" id="textField" style="display: none; color: red;">
