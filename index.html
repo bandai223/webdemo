@@ -7,6 +7,7 @@
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap');
         h1 {
             font-family: 'Noto Sans Thai', sans-serif;
         }
@@ -24,7 +25,16 @@
         }
         button {
             width: 150px; height: 30px;
-            font-family: 'Noto Sans Thai', sans-serif;
+            font-family: 'Sarabun', sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th {
+            border: 1px solid black;
+        }
+        td {
+            border: 1px solid black;
         }
         
     </style>
@@ -34,15 +44,84 @@
     <div class="center"><button style="border: none; background: none;" type="button" onclick="document.getElementById('header').style.color='red'">เปลี่ยนสี</button></div>
     <p class="thai center" style="font-size: 2vw;">ทดสอบพาสาทัยเต็มระบบ</p>
     <p class="center"><img src="assets/images/olafrizz.jpg" width="50%" height="50%" style="width: 700px; height: 500px; object-fit: cover; object-position: 20% 0;"></p>
-    <p><button onclick="displ">NOTHING</button></p>
-    <p><a href="https://www.youtube.com/shorts/xyWKuFa-28A" target="_blank"><button>CLICK ME PLEASE</button></a></p>
+    
+    <p class="center" id="Date"></p>
+    <div><script>
+        document.getElementById("Date").textContent = new Date().toLocaleString("th-TH",{
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+            hour12: false,
+            timeZone: "Asia/Bangkok"
+        });
         
+    </script></div>
+            
     <div class="center">
         <button onclick="document.getElementById('myImage').src='assets/cat/Idle.png'">แงวยืน</button>
         <img id="myImage" src="assets/cat/Idle.png" width="200px" height="200px">
         <button onclick="document.getElementById('myImage').src='assets/cat/Slide.png'">แงวสไลด์</button>
     </div>
 
+    <button onclick="showTable()">แสดงตาราง</button>
+    <button onclick="hideTable()">ซ่อนตาราง</button>
+    <table id="myTable";>
+        <tr>
+            <td style="background-color: darkkhaki;">รายการที่1</td>
+            <td style="background-color: darkkhaki;">รายการที่2</td>
+            <td style="background-color: darkkhaki;">รายการที่3</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>16</td>
+            <td>32</td>
+        </tr>
+        <tr>
+            <td>64</td>
+            <td>128</td>
+            <td>256</td>
+        </tr>
+    </table>
+
+    <script>
+        function showTable() {
+            var table = document.getElementById("myTable");
+            table.style.display = "table";
+        }
+
+        function hideTable() {
+            var table = document.getElementById("myTable");
+            table.style.display = "none";
+        }
+    </script>
+    
+    <div class="center" style="margin-top: 3em;"><button onclick="displayText()">NOTHING</button></div>
+    <div class="center" id="textField" style="display: none; color: red;">
+        I said nothing you IDIOT!
+    </div>
+    <script>
+        function displayText() {
+  var text = document.getElementById("textField");
+  text.style.display = "block";
+}
+    </script>
+
+    <div class="center" style="margin-top: 0.5em;"><a href="https://www.youtube.com/shorts/xyWKuFa-28A" target="_blank"><button>CLICK ME PLEASE</button></a></div>
+
+    <div id="Time"><script>
+        var timeDisplay = document.getElementById("Time");
+
+        function refreshTime() {
+            var dateString = new Date().toLocaleTimeString({timeZone: "Asia/Bangkok"});
+            var formattedString = dateString.replace(", ", " - ");
+            timeDisplay.innerHTML = formattedString;
+        }
+
+        setInterval(refreshTime, 1000);
+    </script></div>
     <p></p>
     <table border="1">
         <tr>
