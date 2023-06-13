@@ -97,15 +97,15 @@
             table.style.display = "none";
         }
     </script>
-    <body>
-        <p>คำนวณเลข</p>
+
+    <div>คำนวณเลข</div>
         <label for="input1">Number #1</label>
         <input id="input1"><br><br>
 
-        <label for="input2">Number #1</label>
+        <label for="input2">Number #2</label>
         <input id="input2"><br><br>
 
-        <label for="input3">Number #1</label>
+        <label for="input3">Number #3</label>
         <input id="input3"><br><br>
 
         <button onclick="calculate()">Submit</button><br><br>
@@ -113,7 +113,6 @@
         <div id="average"></div><br>
         <div id="maxValue"></div><br>
         <div id="minvalue"></div><br>
-    </body>
     <script>
         function calculate() {
             var input1 = parseFloat(document.getElementById("input1").value);
