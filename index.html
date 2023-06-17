@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Jet Demo</title>
+    <title>Pongpanot Web Demo</title>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
@@ -41,8 +41,9 @@
   </head>
   <body>
     <h1 class="center" id="header" style="font-size: 4vw; margin-bottom: 0em;">Yo, Wassup</h1>
-    <div class="center"><button style="border: none; background: none;" type="button" onclick="document.getElementById('header').style.color='red'">เปลี่ยนสี</button></div>
-    <p class="thai center" style="font-size: 2vw;">ทดสอบพาสาทัยเต็มระบบ</p>
+    <div class="center"><button type="button" onclick="document.getElementById('header').style.color='red'">เปลี่ยนสี</button></div>
+    <p class="thai center" style="font-size: 2vw; margin-bottom: 0;">ทดสอบภาษาไทย</p>
+    <p class="thai center" style="font-size: 1vw;">Pongpanot Sangkla พงศ์ปณต แสงกล้า</p>
     <p class="center"><img src="assets/images/olafrizz.jpg" width="50%" height="50%" style="width: 700px; height: 500px; object-fit: cover; object-position: 20% 0;"></p>
     
     <p class="center" id="Date"></p>
@@ -68,7 +69,7 @@
 
     <button onclick="showTable()">แสดงตาราง</button>
     <button onclick="hideTable()">ซ่อนตาราง</button>
-    <table id="myTable";>
+    <table id="myTable" style="display: none">
         <tr>
             <td style="background-color: darkkhaki;">รายการที่1</td>
             <td style="background-color: darkkhaki;">รายการที่2</td>
@@ -98,38 +99,41 @@
         }
     </script>
 
-    <div>คำนวณเลข</div>
-        <label for="input1">Number #1</label>
-        <input id="input1"><br><br>
+<body>
+    <h1>คำนวณเลข</h1>
+    <label for="input1">Number #1</label><br>
+    <input id="input1"><br><br>
 
-        <label for="input2">Number #2</label>
-        <input id="input2"><br><br>
+    <label for="input2">Number #2</label><br>
+    <input id="input2"><br><br>
 
-        <label for="input3">Number #3</label>
-        <input id="input3"><br><br>
+    <label for="input3">Number #3</label><br>
+    <input id="input3"><br><br>
 
-        <button onclick="calculate()">Submit</button><br><br>
+    <button onclick="calculate()">Submit</button><br><br>
 
-        <div id="average"></div><br>
-        <div id="maxValue"></div><br>
-        <div id="minvalue"></div><br>
-    <script>
-        function calculate() {
-            var input1 = parseFloat(document.getElementById("input1").value);
-            var input2 = parseFloat(document.getElementById("input2").value);
-            var input3 = parseFloat(document.getElementById("input3").value);
+    <div id="average"></div><br>
+    <div id="minValue"></div><br>
+    <div id="maxValue"></div><br>   
+</body>
+<script>
+    function calculate() {
+        var input1 = parseFloat(document.getElementById("input1").value)
+        var input2 = parseFloat(document.getElementById("input2").value)
+        var input3 = parseFloat(document.getElementById("input3").value)
 
-            var average = (input1 + input2 + input3) / 3;
+        var average = (input1 + input2 + input3)/3;
 
-            var maxValue = Math.max(input1, input2, input3);
+        var minValue = Math.min(input1,input2,input3)
 
-            var minvalue = Math.min(input1, input2, input3);
+        var maxValue = Math.max(input1,input2,input3)
 
-            document.getElementById("average").innerHTML = "ค่าเฉลี่ยคือ " + average.toFixed(2);
-            document.getElementById("maxValue").innerHTML = "ค่าสูงสุดคือ " + maxValue;
-            document.getElementById("minValue").innerHTML = "ค่าต่ำสุดคือ " + minValue;
-        }
-    <script>
+        document.getElementById("average").innerHTML = "ค่าเฉลี่ยคือ " + average.toFixed(2);
+        document.getElementById("maxValue").innerHTML = "ค่าสูงสุดคือ " + maxValue;
+        document.getElementById("minValue").innerHTML = "ค่าต่ำสุดคือ " + minValue;
+
+    }
+</script>
     
     
     <div class="center" style="margin-top: 3em;"><button onclick="displayText()">NOTHING</button></div>
